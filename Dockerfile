@@ -43,8 +43,8 @@ RUN apt-get update && apt-get install -y \
     sockets
     
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
-COPY ./src /var/www
+# COPY ./src /var/www
 WORKDIR /var/www
-RUN composer install --no-dev 
+# RUN composer install --no-dev 
 
 CMD ["php-fpm"]
